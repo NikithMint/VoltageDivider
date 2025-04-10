@@ -24,7 +24,7 @@ class VoltageDividerCalculator:
         desc_label = ttk.Label(frame, text=(
             "M E C H A T R O N I X\n"
             "Created by: Mahesh Babu Tankashala\n"
-            "Contact: 9490611972"
+            "Contact: +91 9490611972"
             
         ), justify="center", foreground="black", font=("Segoe UI", 10, "bold"))
         desc_label.grid(row=0, column=0, columnspan=3, pady=10)

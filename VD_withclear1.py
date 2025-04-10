@@ -91,20 +91,20 @@ class VoltageDividerCalculator:
 
             if vs is None:
                 vs = vout * (r1 + r2) / r2
-                self.volts.set(f"{round(vs, 6)}")
+                self.volts.set(f"{round(vs, 2)}")
             elif r1 is None:
                 r1 = (vs * r2 / vout) - r2
-                self.ohms1.set(f"{round(r1 / self.get_multiplier(self.ohms1_unit.get()), 6)}")
+                self.ohms1.set(f"{round(r1 / self.get_multiplier(self.ohms1_unit.get()), 2)}")
             elif r2 is None:
                 r2 = vout * r1 / (vs - vout)
-                self.ohms2.set(f"{round(r2 / self.get_multiplier(self.ohms2_unit.get()), 6)}")
+                self.ohms2.set(f"{round(r2 / self.get_multiplier(self.ohms2_unit.get()), 2)}")
             elif vout is None:
                 vout = vs * r2 / (r1 + r2)
-                self.volts_out.set(f"{round(vout, 6)}")
+                self.volts_out.set(f"{round(vout, 2)}")
             else:
                 # All values filled – recalculate Vout based on current units
                 vout = vs * r2 / (r1 + r2)
-                self.volts_out.set(f"{round(vout, 6)}")
+                self.volts_out.set(f"{round(vout, 2)}")
 
         except ZeroDivisionError:
             messagebox.showerror("Error", "Division by zero. Please check values.")
